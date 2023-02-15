@@ -7,45 +7,6 @@
 'use strict'
 // https://stackoverflow.com/questions/60155446/cube-of-cubes-in-three-js
 
-function lineOfMeshes(w, g) {
-  let cubes = [];
-
-  for (let i = 0; i < w; i++) {
-    cubes.push(new THREE.Mesh(geometry, material));
-    cubes[i].position.x += i * g;
-  }
-  //console.log("LINE:" + cubes);
-  return cubes;
-}
-  
-function gridOfMeshes(width, gap) {
-  let cubes = [];
-  for (let line = 0; line < width; line++) {
-    cubes.push(lineOfMeshes(width, gap));
-    for (let cube = 0; cube < width; cube++) {
-      cubes[line][cube].position.y += line * gap;
-    }
-  }
-  //console.log("GRID: " + cubes);
-  return cubes;
-}
-  
-function cubeOfMeshes(width, gap, suits, ranks) {
-  let cubes = [];
-  let hands = [];
-
-  for (let grid = 0; grid < width; grid++) {
-    cubes.push(gridOfMeshes(width, gap));
-    for (let line = 0; line < width;line++) {
-      for (let cube = 0; cube < width; cube++) {
-        cubes[grid][line][cube].position.z += grid * gap;
-      }
-    }
-  }
-  //console.log("CUBE"+ cubes);
-  return cubes;
-}
-
 function createHandMatrix(ranks) {
   // Create 2-D grid with offsuit, paired, and suited hands 
 
@@ -174,7 +135,7 @@ console.log(hands);
 createCubeGrid(suits, hands, gridGap);
 
 camera.position.x = -40;
-camera.position.y = 10;
+camera.position.y = 35;
 camera.position.z = -20;
 let axesHelper = new THREE.AxesHelper(150);
 scene.add(axesHelper);
