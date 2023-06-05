@@ -2,12 +2,24 @@
 <html>
 
 <head>
+<link rel="stylesheet" href="driver.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.149.0/three.js"></script>
 <script src="https://unpkg.com/three@0.139.2/examples/js/controls/OrbitControls.js"></script>
-
 </head>
 
 <body>
+    <div id="cardGrid">
+    </div>
+
+    <div id="selectionForm">
+        <form id="myForm">
+            <label for="textbox1">Hands (enter all hands in format: JTss)</label><br>
+            <textarea id="w3review" name="w3review" rows="4" cols="50">
+            At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+            </textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 
 <script src="cards.js"></script>

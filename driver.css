@@ -1,0 +1,23 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#cardGrid {
+    border-style: solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 70%;
+    height: 70%;
+}
+
+#myForm {
+    border-style: solid;
+    position: absolute;
+    left: 33%;
+    top: 5%;
+}
